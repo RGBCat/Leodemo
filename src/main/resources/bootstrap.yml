@@ -1,0 +1,43 @@
+---
+#开发环境
+spring:
+  profiles:
+    active: dev
+  application:
+    name: user
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.5.50:8848   #集群模式用逗号隔开
+      #1.Data ID中的alibaba-nacos-config-client：对应客户端的配置spring.cloud.nacos.config.prefix，默认值为${spring.application.name}，即：服务名
+      #2.Data ID中的properties：对应客户端的配置spring.cloud.nacos.config.file-extension，默认值为properties
+      #3.Group的值DEFAULT_GROUP：对应客户端的配置spring.cloud.nacos.config.group，默认值为DEFAULT_GROUP
+      #4.在采用默认值的应用要加载的配置规则就是：Data ID=${spring.application.name}.properties，Group=DEFAULT_GROUP
+      config:
+        group: DEFAULT_GROUP
+        server-addr: 192.168.5.50:8848   #集群模式用逗号隔开
+        file-extension: properties
+feign:
+  client:
+    default-config:
+      remote-service:           #服务名，填写default为所有服务
+        connectTimeout: 10000
+        readTimeout: 12000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+---
+#测试环境
+spring:
+  profiles: test
+  application:
+    name: LeoDemo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.5.50:8848
+      config:
+        group: DEFAULT_GROUP
+        server-addr: 192.168.5.50:8848
+        file-extension: properties
