@@ -60,7 +60,7 @@ public class Practice {
             List<Long> attribute2IdList = Arrays.asList("1370282867032068102_1372934377255735341".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
 
             Long attribute2OptionId = attribute2IdList.get(1);
-
+            System.out.println(11111);
             System.out.println(attribute1OptionId+"-----"+attribute2OptionId);
         }
 
