@@ -1,5 +1,7 @@
 package com.example.demo.base;
 
+import java.util.List;
+
 /**
  * 功能描述：
  *
@@ -10,6 +12,7 @@ public class Stu {
     private Long id;
     private int age;
     private String name;
+    private List<Book> books;
 
 
 
@@ -39,5 +42,13 @@ public class Stu {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }

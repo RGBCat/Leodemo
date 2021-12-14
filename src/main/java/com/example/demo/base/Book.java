@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.web.bind.annotation.InitBinder;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
 
 /**
  * 功能描述：
@@ -14,17 +15,15 @@ import javax.annotation.PostConstruct;
 @Data
 public class Book {
     String name;
-    String price;
-
+    int price;
+    Integer size;
+    Date creatTime;
+    Boolean x;
     public Book() {
     }
 
-    public Book(String name, String price) {
-        this.name = name;
-        this.price = price;
-    }
-    @PostConstruct
-    public void init(){
-        System.out.println("init");
+
+    public boolean testB(){
+        return true;
     }
 }

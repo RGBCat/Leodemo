@@ -1,6 +1,7 @@
 package com.example.demo.base;
 
 
+import com.example.demo.util.JsonUtils;
 import com.shopwinner.saas.common.util.CollectionUtil;
 import com.shopwinner.saas.common.util.JwtUtil;
 import io.jsonwebtoken.Claims;
@@ -50,18 +51,30 @@ public class Practice {
     }
 
 
-        public static void main(String[] args) {
-            //属性1
-            List<Long> attribute1IdList = Arrays.asList("1372934377087963154_1372934377142489167".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
+        public static void main(String[] args) throws InterruptedException {
+        List<Book> books = new ArrayList<>();
+        Book a = new Book();
+        a.setName("IamA");
+        a.setPrice(1);
+        Book b = new Book();
+        b.setName("IamA");
+        Book c = new Book();
+        c.setName("IamC");
+        Book d = new Book();
+        d.setName("IamD");
+            b.setPrice(2);
+            c.setPrice(3);
+            d.setPrice(4);
+        books.add(a);
+        books.add(b);
+        books.add(c);
+        books.add(d);
+        Map<String,Integer> bookMap = books.stream().collect(Collectors.groupingBy(Book::getName,Collectors.summingInt(Book::getPrice)));
+            System.out.println(bookMap.get("IamA"));
+//            System.out.println(books.get(0).getName());
+//            Thread.sleep(30000);
+//            System.out.println(books.get(0).getX());
 
-            Long attribute1OptionId = attribute1IdList.get(1);
-
-            //属性2
-            List<Long> attribute2IdList = Arrays.asList("1370282867032068102_1372934377255735341".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
-
-            Long attribute2OptionId = attribute2IdList.get(1);
-            System.out.println(11111);
-            System.out.println(attribute1OptionId+"-----"+attribute2OptionId);
         }
 
 
