@@ -1,7 +1,6 @@
 package com.example.demo.base;
 
 
-import com.example.demo.util.JsonUtils;
 import com.shopwinner.saas.common.util.CollectionUtil;
 import com.shopwinner.saas.common.util.JwtUtil;
 import io.jsonwebtoken.Claims;
@@ -75,6 +74,12 @@ public class Practice {
 //            Thread.sleep(30000);
 //            System.out.println(books.get(0).getX());
 
+            //属性2
+            List<Long> attribute2IdList = Arrays.asList("1370282867032068102_1372934377255735341".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
+
+            Long attribute2OptionId = attribute2IdList.get(1);
+            System.out.println(11111);
+            System.out.println(attribute1OptionId+"-----"+attribute2OptionId);
         }
 
 
