@@ -15,6 +15,8 @@ public class Stu {
     private String name1;
     private String name2;
     private String name3;
+    private String name4;
+    private String name56;
     private List<Book> books;
 
 
