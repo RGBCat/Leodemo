@@ -12,6 +12,8 @@ public class Stu {
     private Long id;
     private int age;
     private String name;
+    private String name1;
+    private String name2;
     private List<Book> books;
 
 
