@@ -1,17 +1,6 @@
 package com.example.demo.base;
 
-import com.shopwinner.saas.common.util.Base62Util;
-import com.shopwinner.saas.common.util.DateUtil;
-import org.apache.xmlbeans.impl.xb.xsdschema.All;
-
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static cn.hutool.crypto.CipherMode.encrypt;
-import static org.bouncycastle.crypto.tls.HashAlgorithm.sha256;
+import java.util.Random;
 
 /**
  * 功能描述：
@@ -26,16 +15,29 @@ public class DateDemo {
 //        String batch = sdf.format(now);
 //        String id = Base62Util.toBase62(1420728780195950662L);
 //        System.out.println(batch+id);
-        List<String> infoDTOS = new ArrayList<>();
-        infoDTOS.add("111");
-        infoDTOS.add("222");
-        infoDTOS.add("333");
-        Book n = new Book();
-        List<String> infoDTOS1 = infoDTOS.stream().filter(s -> s.equals("111")).collect(Collectors.toList());
-        System.out.println(infoDTOS1.size());
-        System.out.println(infoDTOS.size());
+//        List<String> infoDTOS = new ArrayList<>();
+//        infoDTOS.add("111");
+//        infoDTOS.add("222");
+//        infoDTOS.add("333");
+//        Book n = new Book();
+//        List<String> infoDTOS1 = infoDTOS.stream().filter(s -> s.equals("111")).collect(Collectors.toList());
+//        System.out.println(infoDTOS1.size());
+//        System.out.println(infoDTOS.size());
 //        String signature = encrypt("privateKey", sha256("message"));
+        System.out.println(getRandomString(24));
+
     }
+    public static String getRandomString(int length){
+        String str="abcdefghijklmnopqrstuvwxyz123456789";
+        Random random=new Random();
+        StringBuffer sb=new StringBuffer();
+        for(int i=0;i<length;i++){
+            int number=random.nextInt(35);
+            sb.append(str.charAt(number));
+        }
+        return sb.toString();
+    }
+
     public enum InventoryListTypeEnum {
         ALL("1","全部"),
         ALARMS("2", "警报"),

@@ -59,5 +59,6 @@ public class testemail {
             System.out.println("ErrCode : " + e.getErrCode());
             e.printStackTrace();
         }
+        String a="no-need-login.url = /gateway/api/user/login,/gateway/api/register/register,/gateway/api/fallback/test/method,user/userbase/money/getMup,/api/lang/refresData,/api/user/change,/gateway/api/tenant/register,/gateway/generator/getId,/api/user/code,/gateway/api/user/part/userInfo,/gateway/api/user/part/login,/gateway/api/user/connect,/gateway/api/setting/get/sellingInfo,/gateway/api/setting/get/locInfo,/gateway/api/setting/get/busAreaInfo,/gateway/api/tenant/sendCode,/gateway/api/tenant/verifyCode,/gateway/api/tenant/regist,/gateway/api/tenant/getAddressInfo,/gateway/api/user/line/bind,/gateway/api/tenant/complete/info,/gateway/api/user/parseToken,/gateway/api/role/initAllTenantRoleAndRoleResource,/gateway/api/resource/refreshResourceAndRoleResourceCache,/gateway/api/channelshop/shopee/token/authorizationRedirect,/gateway/api/tenant/tenantMessageExport,/gateway/api/channelshop/lazada/token/authorizationRedirect,/gateway/api/dfs/dfsUplocadClient/upload,/gateway/api/channelshop/tiktok/token/tikTokCallback,/gateway/api/user/checkToken,/gateway/api/user/updatePasswordForUser,/gateway/api/channelManage/cacheAllChannelManageTokenFromRedis,/gateway/redirect/fb";
     }
 }

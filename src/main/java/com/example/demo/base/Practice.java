@@ -1,21 +1,12 @@
 package com.example.demo.base;
 
 
-import com.shopwinner.saas.common.util.CollectionUtil;
-import com.shopwinner.saas.common.util.JwtUtil;
-import io.jsonwebtoken.Claims;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.Semaphore;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class Practice {
     public static Date parseStrToDate(String time, String timeFromat) {
@@ -55,31 +46,54 @@ public class Practice {
         Book a = new Book();
         a.setName("IamA");
         a.setPrice(1);
-        Book b = new Book();
-        b.setName("IamA");
-        Book c = new Book();
-        c.setName("IamC");
-        Book d = new Book();
-        d.setName("IamD");
-            b.setPrice(2);
-            c.setPrice(3);
-            d.setPrice(4);
-        books.add(a);
-        books.add(b);
-        books.add(c);
-        books.add(d);
-        Map<String,Integer> bookMap = books.stream().collect(Collectors.groupingBy(Book::getName,Collectors.summingInt(Book::getPrice)));
-            System.out.println(bookMap.get("IamA"));
-//            System.out.println(books.get(0).getName());
-//            Thread.sleep(30000);
-//            System.out.println(books.get(0).getX());
+//        Book b = new Book();
+//        b.setName("IamA");
+//        Book c = new Book();
+//        c.setName("IamC");
+//        Book d = new Book();
+//        d.setName("IamD");
+//            b.setPrice(2);
+//            c.setPrice(3);
+//            d.setPrice(4);
+//        books.add(a);
+//        books.add(b);
+//        books.add(c);
+//        books.add(d);
+//        books.forEach(book ->
+//            book.setName(book.getName().toUpperCase(Locale.ROOT))
+//        );
+//            for (Book b1:books) {
+//                System.out.println(b1.name);
+//            }
+//        Map<String,Integer> bookMap = books.stream().collect(Collectors.groupingBy(Book::getName,Collectors.summingInt(Book::getPrice)));
+//            System.out.println(bookMap.get("IamA"));
+////            System.out.println(books.get(0).getName());
+////            Thread.sleep(30000);
+////            System.out.println(books.get(0).getX());
+//
+//            //属性2
+//            List<Long> attribute2IdList = Arrays.asList("1370282867032068102_1372934377255735341".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
+//
+//            Long attribute2OptionId = attribute2IdList.get(1);
+//            System.out.println(11111);
+////            System.out.println(attribute1OptionId+"-----"+attribute2OptionId);\
 
-            //属性2
-            List<Long> attribute2IdList = Arrays.asList("1370282867032068102_1372934377255735341".split("_")).stream().map(s->Long.valueOf(s)).collect(Collectors.toList());
+            List<String> strings = new ArrayList<>();
+            List<String> strings1 = new ArrayList<>();
+            strings.add("a".toUpperCase(Locale.ROOT));
+            strings.add("b  1111");
+            strings.add("c 111");
+            strings.add("d 111");
+//            strings.stream().forEach(s -> s.toUpperCase(Locale.ROOT));
 
-            Long attribute2OptionId = attribute2IdList.get(1);
-            System.out.println(11111);
-            System.out.println(attribute1OptionId+"-----"+attribute2OptionId);
+                strings.forEach(s1 -> strings1.add(s1.toUpperCase(Locale.ROOT)));
+                 strings1.add("d");
+       strings1.retainAll(strings);
+            for (String s:strings1
+            ) {
+                System.out.println(s);
+
+            }
         }
 
 

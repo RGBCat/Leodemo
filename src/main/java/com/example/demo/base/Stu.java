@@ -8,11 +8,12 @@ import java.util.List;
  * @Author: hanlq
  * @Date: 2020/12/15 下午7:57
  */
-public class Stu {
+public class Stu<T> {
     private Long id;
     private int age;
     private String name;
     private List<Book> books;
+    private T result;
 
 
 
@@ -50,5 +51,13 @@ public class Stu {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public T getResult() {
+        return result;
+    }
+
+    public void setResult(T result) {
+        this.result = result;
     }
 }
